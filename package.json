@@ -2,6 +2,7 @@
   "name": "neighborhood-map-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hupe1980.github.io/neighborhood-map-react",
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.43",
     "material-ui": "^1.0.0-beta.44",
