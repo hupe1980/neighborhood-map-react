@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card, { CardContent, CardMedia } from 'material-ui/Card';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 import Address from './Address';
 
@@ -34,7 +36,9 @@ const Details = ({ classes, details }) => {
             image={`https://api.goingelectric.de/chargepoints/photo/?key=${API_KEY}&id=${
               photos[0].id
             }&size=200`}
-            title="Contemplative Reptile"
+            title={name}
+            role="img"
+            aria-label={name}
           />
         )}
       <CardContent>

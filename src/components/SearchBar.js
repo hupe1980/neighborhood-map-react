@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { withStyles } from 'material-ui/styles';
-import IconButton from 'material-ui/IconButton';
-import Input from 'material-ui/Input';
-import Paper from 'material-ui/Paper';
+import { withStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import Input from '@material-ui/core/Input';
+import Paper from '@material-ui/core/Paper';
 import ClearIcon from '@material-ui/icons/Clear';
 import SearchIcon from '@material-ui/icons/Search';
-import { grey } from 'material-ui/colors';
+import { grey } from '@material-ui/core/colors';
 
 const propTypes = {
   placeholder: PropTypes.string,

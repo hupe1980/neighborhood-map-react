@@ -19,11 +19,11 @@ class MapContainer extends Component {
   };
 
   onInfoWindowClose = () => {
-    this.props.setCurrentId('');
+    this.props.setCurrentId(-1);
   };
 
   onMapClick = () => {
-    this.props.setCurrentId('');
+    this.props.setCurrentId(-1);
   };
 
   render() {

@@ -1,4 +1,5 @@
 import { getFilter } from './filter';
+import { setError } from './error';
 
 const API_KEY = process.env.REACT_APP_GOINGELECTRIC_API_KEY;
 const URL = `https://api.goingelectric.de/chargepoints/?key=${API_KEY}`;
@@ -22,6 +23,9 @@ export const fetchChargePoints = (bounds, zoom) => {
           type: FETCH_CHARGELOCATIONS,
           payload: chargelocations,
         });
+      })
+      .catch(error => {
+        dispatch(setError('Error loading chargelocations'));
       });
   };
 };

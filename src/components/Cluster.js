@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Badge from 'material-ui/Badge';
+import Badge from '@material-ui/core/Badge';
 import PlaceIcon from '@material-ui/icons/Place';
 
 const propTypes = {

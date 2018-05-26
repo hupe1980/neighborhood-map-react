@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { withStyles } from 'material-ui/styles';
-import Drawer from 'material-ui/Drawer';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import IconButton from 'material-ui/IconButton';
-import Hidden from 'material-ui/Hidden';
+import { withStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Hidden from '@material-ui/core/Hidden';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import ErrorContainer from '../containers/ErrorContainer';
 import MapContainer from '../containers/MapContainer';
 import ListContainer from '../containers/ListContainer';
 import SearchBar from './SearchBar';
@@ -117,6 +118,7 @@ class App extends Component {
           <div className={classes.toolbar} />
           <MapContainer />
         </main>
+        <ErrorContainer />
       </Wrapper>
     );
   }

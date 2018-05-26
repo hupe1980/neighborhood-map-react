@@ -1,10 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Toolbar from 'material-ui/Toolbar';
-import MUIList from 'material-ui/List';
-import Typography from 'material-ui/Typography';
-import Divider from 'material-ui/Divider';
-import { ListItem, ListItemText, ListItemIcon } from 'material-ui/List';
+import Toolbar from '@material-ui/core/Toolbar';
+import MUIList from '@material-ui/core/List';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 import PlaceIcon from './PlaceIcon';
 

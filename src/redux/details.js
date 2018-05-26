@@ -1,4 +1,6 @@
-const API_KEY = '1edc055d06d63d16f2fb0fa59b2d8c0a';
+import { setError } from './error';
+
+const API_KEY = process.env.REACT_APP_GOINGELECTRIC_API_KEY;
 const URL = `https://api.goingelectric.de/chargepoints/?key=${API_KEY}`;
 
 export const FETCH_DETAILS = 'FETCH_DETAILS';
@@ -16,6 +18,9 @@ export const fetchDetails = id => {
           type: FETCH_DETAILS,
           payload: details,
         });
+      })
+      .catch(error => {
+        dispatch(setError('Error loading details'));
       });
   };
 };

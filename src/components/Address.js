@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 
 const propTypes = {
   street: PropTypes.string.isRequired,

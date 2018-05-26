@@ -42,15 +42,6 @@ class Map extends Component {
     this.listeners = {};
   }
 
-  componentWillReceiveProps({ isScriptLoaded, isScriptLoadSucceed }) {
-    if (isScriptLoaded && !this.props.isScriptLoaded) {
-      // load finished
-      if (isScriptLoadSucceed) {
-        this.loadMap();
-      } else this.props.onError();
-    }
-  }
-
   componentDidMount() {
     const { isScriptLoaded, isScriptLoadSucceed } = this.props;
     if (isScriptLoaded && isScriptLoadSucceed) {
@@ -59,7 +50,11 @@ class Map extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { center, zoom } = this.props;
+    const { center, zoom, isScriptLoaded } = this.props;
+
+    if (isScriptLoaded && !prevProps.isScriptLoaded) {
+      this.loadMap();
+    }
 
     if (!window.google || !window.google.maps) {
       return;
