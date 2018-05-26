@@ -4,12 +4,13 @@ This is the Udacity Neighborhood Map (React) Project. The goals are:
 - Integrate a third-party data API and make your app accessible and usable offline.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
 [GoingElectric](https://www.goingelectric.de/stromtankstellen/api/dokumentation/) is used as third-party data API.
 
 ## Features
 - The app shows chargelocations (red icon) and clusters of chargelocations (black icon)
-- Clusters are formed when charge points are too close together
-- The badge shows the number of clustered charging points
+- Clusters are formed when chargelocations are too close together
+- The badge shows the number of clustered chargelocations
 - Clusters can be resolved by zooming in
 - Clicking on a marker (red icon) displays details of the chargelocation
 
