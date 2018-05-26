@@ -50,10 +50,20 @@ class Map extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { center, zoom, isScriptLoaded } = this.props;
+    const {
+      center,
+      zoom,
+      isScriptLoaded,
+      isScriptLoadSucceed,
+      onError,
+    } = this.props;
 
     if (isScriptLoaded && !prevProps.isScriptLoaded) {
-      this.loadMap();
+      if (isScriptLoadSucceed) {
+        this.loadMap();
+      } else {
+        onError();
+      }
     }
 
     if (!window.google || !window.google.maps) {

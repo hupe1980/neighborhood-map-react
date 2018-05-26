@@ -17,6 +17,7 @@ const propTypes = {
   onMapChange: PropTypes.func.isRequired,
   onMarkerClick: PropTypes.func.isRequired,
   onInfoWindowClose: PropTypes.func.isRequired,
+  onError: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -48,6 +49,7 @@ const Map = ({
   onMapChange,
   onMarkerClick,
   onInfoWindowClose,
+  onError,
 }) => (
   <Wrapper>
     <GoogleMap
@@ -62,6 +64,7 @@ const Map = ({
       styles={mapStyles}
       onChange={onMapChange}
       onClick={onMapClick}
+      onError={onError}
     >
       {cluster.map(cl => {
         const { coordinates, clusterCount } = cl;

@@ -8,32 +8,38 @@ import {
   getCluster,
 } from '../redux/chargelocations';
 import { setCurrentId, getCurrentId } from '../redux/current';
+import { setError } from '../redux/error';
 
 class MapContainer extends Component {
-  onMapChange = ({ center, zoom, bounds }) => {
+  handleMapChange = ({ center, zoom, bounds }) => {
     this.props.fetchChargePoints(bounds, zoom);
   };
 
-  onMarkerClick = marker => {
+  handleMarkerClick = marker => {
     this.props.setCurrentId(marker.id);
   };
 
-  onInfoWindowClose = () => {
+  handleInfoWindowClose = () => {
     this.props.setCurrentId(-1);
   };
 
-  onMapClick = () => {
+  handleMapClick = () => {
     this.props.setCurrentId(-1);
+  };
+
+  handleError = () => {
+    this.props.setError('Error loading google.maps');
   };
 
   render() {
     return (
       <Map
         {...this.props}
-        onMarkerClick={this.onMarkerClick}
-        onMapClick={this.onMapClick}
-        onMapChange={this.onMapChange}
-        onInfoWindowClose={this.onInfoWindowClose}
+        onMarkerClick={this.handleMarkerClick}
+        onMapClick={this.handleMapClick}
+        onMapChange={this.handleMapChange}
+        onInfoWindowClose={this.handleInfoWindowClose}
+        onError={this.handleError}
       />
     );
   }
@@ -48,4 +54,5 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, {
   setCurrentId,
   fetchChargePoints,
+  setError,
 })(MapContainer);
